@@ -1,0 +1,124 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Navigation Hover Effect */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Project Card Hover */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Bars */
+.skill-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e5e7eb;
+  overflow: hidden;
+}
+.skill-progress {
+  height: 100%;
+  background-color: #3b82f6;
+  transition: width 1s ease-in-out;
+}
+
+/* Form Focus */
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Hero Image Floating */
+.hero-image {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Preloader Spinner */
+.loader {
+  border: 6px solid #e5e7eb;
+  border-top: 6px solid #3b82f6;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Fade Up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-up.animate {
+  animation: fadeUp 1s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade Down */
+.fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+.fade-down.animate {
+  animation: fadeDown 1s ease forwards;
+}
+@keyframes fadeDown {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Zoom In */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.zoom-in.animate {
+  animation: zoomIn 1s ease forwards;
+}
+@keyframes zoomIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Typing Effect */
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #3b82f6;
+  animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
+  display: inline-block;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
